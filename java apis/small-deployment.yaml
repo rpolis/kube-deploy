@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: sa-web-app
+spec:
+  template:
+    metadata:
+      labels:
+        app: sa-web-app
+    spec:
+      containers:
+        - image: rpoliset/dropwizard
+          imagePullPolicy: Always
+          name: sa-web-app
+          ports:
+            - containerPort: 8080
